@@ -5,7 +5,7 @@
     "randomsilo <randomsilo@gmail.com>"
   ],
   "description": "Angular Reusable Code",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "main": "dist/ng-silo-min.js",
   "moduleType": [
     "node"
