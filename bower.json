@@ -1,0 +1,27 @@
+{
+  "name": "ng-silo",
+  "homepage": "https://github.com/randomsilo/ng-silo",
+  "authors": [
+    "randomsilo <randomsilo@gmail.com>"
+  ],
+  "description": "Angular Reusable Code",
+  "version": "0.0.1",
+  "main": "dist/ng-silo-min.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "table",
+    "pagination",
+    "filter",
+    "sort"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
