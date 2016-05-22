@@ -45,10 +45,10 @@ angular.module('NgSilo', [])
         return (begin <= index && index < end);
       };
 
-      instance.load = function( promise, rowsPerPage, defaultSortColumn) {
+      instance.load = function( promiseOrData, rowsPerPage, defaultSortColumn) {
         instance.loadingTable = true;
 
-        promise.then(function(response) {
+        promise.resolve( promiseOrData).then(function(response) {
           instance.numPerPage = rowsPerPage || instance.numPerPage;
           instance.sortColumn = defaultSortColumn || instance.sortColumn;
           instance.changeData(response);
