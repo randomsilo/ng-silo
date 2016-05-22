@@ -45,15 +45,23 @@ angular.module('NgSilo', [])
         return (begin <= index && index < end);
       };
 
-      instance.load = function( promiseOrData, rowsPerPage, defaultSortColumn) {
+      instance.load = function( promise, rowsPerPage, defaultSortColumn) {
         instance.loadingTable = true;
 
-        promise.resolve( promiseOrData).then(function(response) {
+        if ('function' === typeof promise.then) {
+          // probably a promise
+          promise.then(function(response) {
+            instance.numPerPage = rowsPerPage || instance.numPerPage;
+            instance.sortColumn = defaultSortColumn || instance.sortColumn;
+            instance.changeData(response);
+            instance.loadingTable = false;
+          });
+        } else {
           instance.numPerPage = rowsPerPage || instance.numPerPage;
           instance.sortColumn = defaultSortColumn || instance.sortColumn;
-          instance.changeData(response);
+          instance.changeData( promise);
           instance.loadingTable = false;
-        });
+        }
       };
 
 
